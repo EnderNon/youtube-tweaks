@@ -1,0 +1,117 @@
+/* ==UserStyle==
+@name           no youtube border
+@namespace      https://github.com/EnderNon/youtube-tweaks
+@version        1.0.0
+@description    Disable annoying rounding in youtube
+@author         EnderNon
+==/UserStyle== */
+@-moz-document domain("youtube.com") {
+  /* disable rounded border on player*/
+  div[id*="player"] > div[id="player-container-outer"] > div[id="player-container-inner"] > div[id="player-container"] > ytd-player {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  ytd-watch-flexy[rounded-player] #ytd-player.ytd-watch-flexy {
+    border-radius: 0;
+  }
+
+  /* disable rounded view in chapters list*/
+  #thumbnail.ytd-macro-markers-list-item-renderer {
+    border-radius: 0;
+  }
+
+  /* disable desc border thingy */
+  #description.ytd-watch-metadata {
+    border-radius: 0;
+    background-color: rgba(128, 128, 128, 0.1);
+
+    /* disable desc custom colour oh hover*/
+    --yt-saturated-raised-background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* disable rounded view in the list of recommendations on side*/
+  yt-thumbnail-view-model[class*="ytThumbnailViewModelHost"] {
+    border-radius: 0;
+  }
+
+  /* disable rounded view on top searchbar */
+  /* left */
+  .ytSearchboxComponentInputBox {
+    border-radius: 0 0 0 0;
+  }
+  /* right */
+  .ytSearchboxComponentSearchButton {
+    border-radius: 0 0 0 0;
+  }
+
+  /* create button top right */
+  button[class*="yt-spec-button-shape-"] {
+    border-radius: 0;
+  }
+
+  /* gaming */
+  html {
+    --yt-button-border-radius: 0;
+  }
+
+  /* notif button */
+  yt-icon-button.ytd-masthead:hover,
+  ytd-topbar-menu-button-renderer.ytd-masthead:hover,
+  ytd-notification-topbar-button-renderer.ytd-masthead:hover {
+    border-radius: 0;
+  }
+  div[id="content"] > div[id="masthead-container"] > ytd-masthead[id="masthead"] > div[id="container"] > div[id="end"] > div[id="buttons"] > ytd-notification-topbar-button-renderer {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* gaming 2 */
+  yt-interaction.circular .fill.yt-interaction,
+  yt-interaction.circular .stroke.yt-interaction {
+    border-radius: 0;
+  }
+
+  /* like/dislike buttons radius and also subscribe and probably other stuff that changes as a consequence */
+  [class*="yt-spec-button-shape-next--size"][class*="yt-spec-button-shape-next--segmented"] {
+    border-radius: 0 0 0 0;
+  }
+
+  /* search dropdown */
+  .ytSearchboxComponentSuggestionsContainer {
+    border-radius: 0;
+  }
+
+  /* stuff on left side */
+  ytd-guide-entry-renderer {
+    border-radius: 0;
+  }
+  #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer:hover {
+    border-radius: 0;
+  }
+
+  /* subscribe button dropdown */
+  .ytSheetViewModelContextual {
+    border-radius: 0;
+  }
+
+  /* channel page header img */
+  .ytImageBannerViewModelInset {
+    border-radius: 0;
+  }
+
+  /* channel page thumbnails and shit*/
+  ytd-thumbnail a[id*="thumbnail"].ytd-thumbnail {
+    border-radius: 0;
+  }
+
+  /* unsub button dialog */
+  tp-yt-paper-dialog[modern] {
+    border-radius: 0;
+  }
+
+  /* /feed/channels unsub dropdown */
+  ytd-menu-popup-renderer {
+    border-radius: 0;
+  }
+}
