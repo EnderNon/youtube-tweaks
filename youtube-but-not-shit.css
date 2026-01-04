@@ -114,4 +114,48 @@
   ytd-menu-popup-renderer {
     border-radius: 0;
   }
+  
+  /* disable frosted glass on header */
+  ytd-masthead[frosted-glass-mode="without-chipbar"] #background.ytd-masthead {
+    background-color: var( --yt-spec-base-background );
+    backdrop-filter: none;
+  }
+  
+  /* the grey thumbnail placeholder til it all loads on the channel videos page */
+  div[id="dismissible"] >  div[id="thumbnail"] > ytd-thumbnail::before {
+    border-radius: 0;
+  }
+  
+  /* moves the three dots button under a video thumbnail to be inline */
+  ytd-menu-renderer.ytd-rich-grid-media {
+    right: 0px;
+    background-color: rgba(127,127,127,0.1);
+  }
+  ytd-menu-renderer.ytd-rich-grid-media:hover {
+    background-color: rgba(127,127,127,0.3);
+  }
+  /* and also moves title so its not colliding with the 3 dots button */
+  #meta.ytd-rich-grid-media {
+    padding-right: 40px;
+  }
+  
+  /* yt left side panel when not expanded */
+  div[id="content"] > ytd-mini-guide-renderer {
+    background-color: --yt-spec-menu-background;
+  }
+  
+  /* yt left side panel items - square eddition */
+  div[id="items"] > ytd-mini-guide-entry-renderer {
+    border-radius: 0;
+    background-color: rgba(127,127,127,0.1);
+    margin-bottom: 10px;
+  }
+  div[id="items"] > ytd-mini-guide-entry-renderer:hover {
+    background-color: rgba(127,127,127,0.3);
+  }
+  
+  /* visit communtiy button and also subscribe */
+  div[class="ytFlexibleActionsViewModelAction"] > button-view-model[class="ytSpecButtonViewModelHost"] > a[class*="yt-spec-button-shape-next"] {
+    border-radius: 0;
+  }
 }
