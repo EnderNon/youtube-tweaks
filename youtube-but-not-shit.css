@@ -1,161 +1,315 @@
 /* ==UserStyle==
-@name           no youtube border
+@name           youtube but not shit
 @namespace      https://github.com/EnderNon/youtube-tweaks
 @version        1.0.0
-@description    Disable annoying rounding in youtube
+@description    Disable annoying rounding in youtube and other things for me
 @author         EnderNon
 ==/UserStyle== */
+/* colours used - you can override these */
+:root {
+    /* colour 1 = colour default on the square buttons.*/
+    --endernon-yt-c1: rgba(127, 127, 127, 0.2);
+    /* colour 1 = colour default on the square buttons.*/
+    --endernon-yt-c2: rgba(127, 127, 127, 0.5);
+    /* sidebar on left and also top bar */
+    --endernon-yt-sides: rgba(25, 25, 25, 1);
+}
 @-moz-document domain("youtube.com") {
-  /* disable rounded border on player*/
-  div[id*="player"] > div[id="player-container-outer"] > div[id="player-container-inner"] > div[id="player-container"] > ytd-player {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  ytd-watch-flexy[rounded-player] #ytd-player.ytd-watch-flexy {
-    border-radius: 0;
-  }
+    /* main youtube shit */
+    /* also on livechat thing next to desc */
+    .ytVideoMetadataCarouselViewModelHost {
+        border-radius: 0;
+    }
 
-  /* disable rounded view in chapters list*/
-  #thumbnail.ytd-macro-markers-list-item-renderer {
-    border-radius: 0;
-  }
 
-  /* disable desc border thingy */
-  #description.ytd-watch-metadata {
-    border-radius: 0;
-    background-color: rgba(128, 128, 128, 0.1);
 
-    /* disable desc custom colour oh hover*/
-    --yt-saturated-raised-background: rgba(255, 255, 255, 0.1);
-  }
+    /* disable rounded view on top searchbar */
+    /* left */
+    .ytSearchboxComponentInputBox {
+        border-radius: 0 0 0 0;
+    }
+    /* right */
+    .ytSearchboxComponentSearchButton {
+        border-radius: 0 0 0 0;
+    }
 
-  /* disable rounded view in the list of recommendations on side*/
-  yt-thumbnail-view-model[class*="ytThumbnailViewModelHost"] {
-    border-radius: 0;
-  }
+    /* create button top right */
+    button[class*="yt-spec-button-shape-"] {
+        border-radius: 0;
+    }
 
-  /* disable rounded view on top searchbar */
-  /* left */
-  .ytSearchboxComponentInputBox {
-    border-radius: 0 0 0 0;
-  }
-  /* right */
-  .ytSearchboxComponentSearchButton {
-    border-radius: 0 0 0 0;
-  }
+    /* gaming */
+    html {
+        --yt-button-border-radius: 0;
+    }
 
-  /* create button top right */
-  button[class*="yt-spec-button-shape-"] {
-    border-radius: 0;
-  }
+    /* notif button */
+    yt-icon-button.ytd-masthead:hover,
+    ytd-topbar-menu-button-renderer.ytd-masthead:hover,
+    ytd-notification-topbar-button-renderer.ytd-masthead:hover {
+        border-radius: 0;
+    }
+    div[id="content"] > div[id="masthead-container"] > ytd-masthead[id="masthead"] > div[id="container"] > div[id="end"] > div[id="buttons"] > ytd-notification-topbar-button-renderer {
+        background-color: var(--endernon-yt-c1);
+    }
 
-  /* gaming */
-  html {
-    --yt-button-border-radius: 0;
-  }
+    /* gaming 2 */
+    yt-interaction.circular .fill.yt-interaction,
+    yt-interaction.circular .stroke.yt-interaction {
+        border-radius: 0;
+    }
 
-  /* notif button */
-  yt-icon-button.ytd-masthead:hover,
-  ytd-topbar-menu-button-renderer.ytd-masthead:hover,
-  ytd-notification-topbar-button-renderer.ytd-masthead:hover {
-    border-radius: 0;
-  }
-  div[id="content"] > div[id="masthead-container"] > ytd-masthead[id="masthead"] > div[id="container"] > div[id="end"] > div[id="buttons"] > ytd-notification-topbar-button-renderer {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
 
-  /* gaming 2 */
-  yt-interaction.circular .fill.yt-interaction,
-  yt-interaction.circular .stroke.yt-interaction {
-    border-radius: 0;
-  }
 
-  /* like/dislike buttons radius and also subscribe and probably other stuff that changes as a consequence */
-  [class*="yt-spec-button-shape-next--size"][class*="yt-spec-button-shape-next--segmented"] {
-    border-radius: 0 0 0 0;
-  }
+    /* search dropdown */
+    .ytSearchboxComponentSuggestionsContainer {
+        border-radius: 0;
+    }
 
-  /* search dropdown */
-  .ytSearchboxComponentSuggestionsContainer {
-    border-radius: 0;
-  }
+    /* stuff on left side */
+    ytd-guide-entry-renderer {
+        border-radius: 0;
+    }
+    #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer:hover {
+        border-radius: 0;
+    }
 
-  /* stuff on left side */
-  ytd-guide-entry-renderer {
-    border-radius: 0;
-  }
-  #endpoint.yt-simple-endpoint.ytd-guide-entry-renderer:hover {
-    border-radius: 0;
-  }
+    /* subscribe button dropdown */
+    .ytSheetViewModelContextual {
+        border-radius: 0;
+    }
 
-  /* subscribe button dropdown */
-  .ytSheetViewModelContextual {
-    border-radius: 0;
-  }
 
-  /* channel page header img */
-  .ytImageBannerViewModelInset {
-    border-radius: 0;
-  }
 
-  /* channel page thumbnails and shit*/
-  ytd-thumbnail a[id*="thumbnail"].ytd-thumbnail {
-    border-radius: 0;
-  }
+    /* unsub button dialog */
+    tp-yt-paper-dialog[modern] {
+        border-radius: 0;
+    }
 
-  /* unsub button dialog */
-  tp-yt-paper-dialog[modern] {
-    border-radius: 0;
-  }
+    /* /feed/channels unsub dropdown */
+    ytd-menu-popup-renderer {
+        border-radius: 0;
+    }
 
-  /* /feed/channels unsub dropdown */
-  ytd-menu-popup-renderer {
-    border-radius: 0;
-  }
-  
-  /* disable frosted glass on header */
-  ytd-masthead[frosted-glass-mode="without-chipbar"] #background.ytd-masthead {
-    background-color: var( --yt-spec-base-background );
-    backdrop-filter: none;
-  }
-  
-  /* the grey thumbnail placeholder til it all loads on the channel videos page */
-  div[id="dismissible"] >  div[id="thumbnail"] > ytd-thumbnail::before {
-    border-radius: 0;
-  }
-  
-  /* moves the three dots button under a video thumbnail to be inline */
-  ytd-menu-renderer.ytd-rich-grid-media {
-    right: 0px;
-    background-color: rgba(127,127,127,0.1);
-  }
-  ytd-menu-renderer.ytd-rich-grid-media:hover {
-    background-color: rgba(127,127,127,0.3);
-  }
-  /* and also moves title so its not colliding with the 3 dots button */
-  #meta.ytd-rich-grid-media {
-    padding-right: 40px;
-  }
-  
-  /* yt left side panel when not expanded */
-  div[id="content"] > ytd-mini-guide-renderer {
-    background-color: --yt-spec-menu-background;
-  }
-  
-  /* yt left side panel items - square eddition */
-  div[id="items"] > ytd-mini-guide-entry-renderer {
-    border-radius: 0;
-    background-color: rgba(127,127,127,0.1);
-    margin-bottom: 10px;
-  }
-  div[id="items"] > ytd-mini-guide-entry-renderer:hover {
-    background-color: rgba(127,127,127,0.3);
-  }
-  
-  /* visit communtiy button and also subscribe */
-  div[class="ytFlexibleActionsViewModelAction"] > button-view-model[class="ytSpecButtonViewModelHost"] > a[class*="yt-spec-button-shape-next"] {
-    border-radius: 0;
-  }
+    /* disable frosted glass on header */
+    ytd-masthead[frosted-glass-mode="without-chipbar"] #background.ytd-masthead {
+        background-color: var( --yt-spec-base-background);
+        backdrop-filter: none;
+    }
+    /* also make it smaller*/
+    #frosted-glass.with-chipbar.ytd-app {
+        height: 64px;
+        background-color: var(--endernon-yt-sides);
+    }
+
+    /* the grey thumbnail placeholder til it all loads on the channel videos page */
+    div[id="dismissible"] > div[id="thumbnail"] > ytd-thumbnail::before {
+        border-radius: 0;
+    }
+
+    /* moves the three dots button under a video thumbnail to be inline and square on hover */
+    ytd-menu-renderer.ytd-rich-grid-media,
+    .yt-lockup-metadata-view-model__menu-button,
+    .ytLockupMetadataViewModelMenuButton {
+        right: 0px;
+        background-color: var(--endernon-yt-c1);
+    }
+    ytSpecButtonShapeNextSizeM {
+        border-bottom-left-radius: 0;
+    }
+    ytd-menu-renderer.ytd-rich-grid-media:hover {
+        background-color: var(--endernon-yt-c2);
+    }
+    /* and also moves title so its not colliding with the 3 dots button */
+    .ytLockupMetadataViewModelTitle {
+        padding-right: 36px;
+    }
+
+    /* yt left side panel when not expanded */
+    div[id="content"] > ytd-mini-guide-renderer {
+        background-color: var(--endernon-yt-sides);
+    }
+    /* yt left side panel when expanded */
+    #contentContainer.tp-yt-app-drawer {
+        background-color: var(--endernon-yt-sides);
+    }
+
+    /* and the home button when expanded */
+    ytd-guide-entry-renderer[active] {
+        background-color: var(--endernon-yt-c1);
+    }
+
+    /* yt left side panel items - square eddition */
+    div[id="items"] > ytd-mini-guide-entry-renderer {
+        border-radius: 0;
+        background-color: var(--endernon-yt-c1);
+        margin-bottom: 10px;
+    }
+    div[id="items"] > ytd-mini-guide-entry-renderer:hover {
+        background-color: var(--endernon-yt-c2);
+    }
+
+    /* visit communtiy button and also subscribe */
+    div[class="ytFlexibleActionsViewModelAction"] > button-view-model[class="ytSpecButtonViewModelHost"] > a[class*="yt-spec-button-shape-next"] {
+        border-radius: 0;
+    }
+
+
+
+    /* disable progress bar gradient. why is this a thing */
+    .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+        background: #f03;
+    }
+
+    /* top bar on the top - fucking opacity autochange SUCKS. MAKE IT ALWAYS OPAQUE*/
+    ytd-masthead div[id="background"][style*="opacity"] {
+        opacity: 1 !important;
+    }
+    /* voice search button */
+    #voice-search-button.ytd-masthead {
+        border-radius: 0;
+    }
+    /* move the yt searchbar clear button to the left a bit and also smaller */
+    .ytSearchboxComponentDesktop .ytSearchboxComponentClearButton {
+        right: 5px;
+        position: absolute;
+        border-radius: 0;
+        height: 30px;
+        width: 30px;
+    }
+    .ytSuggestionComponentRoundedSuggestion {
+        border-radius: 0;
+    }
+
+    /* chat window */
+    ytd-live-chat-frame[rounded-container] > iframe[id="chatframe"][class*="ytd-live-chat-frame"] {
+        border-radius: 0;
+    }
+
+    /* hide stupid as shit youtube player button bg */
+    .ytp-chrome-controls {
+        .ytp-right-controls,
+        .ytp-time-wrapper-delhi,
+        .ytp-autohide-fade-transition {
+            backdrop-filter: none !important;
+            -webkit-transition: opacity .25s cubic-bezier(0, 0, .2, 1);
+            transition: opacity .25s cubic-bezier(0, 0, .2, 1);
+        }
+    }
+
+    /* ez RYD thing */
+    #ryd-bar-container {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    /* ddisable border radius in feed hover play */
+    ytd-video-preview[rounded-corners-large] #media-container.ytd-video-preview {
+        border-radius: 0;
+    }
+
+    /* disable youtube feed video hover outline shit and replace with better*/
+    yt-touch-feedback-shape {
+        display: none !important;
+        /* .ytSpecTouchFeedbackShapeHoverEffect {
+      background: rgba(255,255,255,0.1) !important;
+    }
+    .ytSpecTouchFeedbackShapeStroke {
+      background: rgba(255,255,255,0.5) !important;
+    }
+    .ytSpecTouchFeedbackShapeFill {
+      background: rgba(255,255,255,0) !important;
+    } */
+    }
+
+
+
+    /* the chips in the right side recommendations in player */
+    div#related div#items div#header:has(yt-related-chip-cloud-renderer) {
+        display: none;
+    }
+}
+
+@-moz-document url-prefix("https://www.youtube.com/watch") {
+    /* Youtube video player */
+    
+    /* The player components*/
+    div#columns > div#primary > div#primary-inner { /* left side */
+        div#player {
+            /* disable rounded border on player*/
+            div#player-container-outer > div#player-container-inner > div#player-container > ytd-player {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            ytd-watch-flexy[rounded-player] #ytd-player.ytd-watch-flexy {
+                border-radius: 0;
+            }
+        }
+        div#below {
+            /* disable desc border thingy */
+            #description.ytd-watch-metadata {
+                border-radius: 0;
+                background-color: var(--endernon-yt-c1);
+
+                /* disable desc custom colour oh hover*/
+                --yt-saturated-raised-background: var(--endernon-yt-c2);
+            }
+
+            /* for some reason this is broken. Channel and SUBSCRIBe button*/
+            #owner.ytd-watch-metadata {
+                visibility: initial !important;
+            }
+            /* like/dislike buttons radius and also subscribe and probably other stuff that changes as a consequence */
+            /* also the 3-dot dropdown next to the like/dislike + share + save and maybe more */
+            button-view-model.ytSpecButtonViewModelHost,
+            yt-button-shape {
+                button[class*="ytSpecButtonShapeNext"] {
+                    border-radius: 0 0 0 0;
+                }
+            }
+            /* the Ask button */
+            yt-button-view-model.ytd-menu-renderer:has(button-view-model button[aria-label="Ask"]) {
+                display: none;
+            }
+        }
+    }
+    div#columns > div#secondary > div#secondary-inner { /* right side*/
+        div#panels {
+            ytd-engagement-panel-section-list-renderer {
+                border-radius: 0;
+            }
+            /* disable rounded view in chapters list*/
+            #thumbnail.ytd-macro-markers-list-item-renderer {
+                border-radius: 0;
+            }
+        }
+        /* disable rounded view in the list of recommendations on side*/
+        yt-thumbnail-view-model[class*="ytThumbnailViewModelHost"] {
+            border-radius: 0;
+        }
+    }
+}
+
+@-moz-document regexp("https?://www\\.youtube\\.com/@.*") {
+    /* Youtube creator channel page*/
+    
+    /* channel page header img */
+    .ytImageBannerViewModelInset {
+        border-radius: 0;
+    }
+
+    /* channel page thumbnails and shit*/
+    ytd-thumbnail a[id*="thumbnail"].ytd-thumbnail {
+        border-radius: 0;
+    }
+}
+
+@-moz-document regexp("https?://www\\.youtube\\.com/results.*") {
+    /* Youtube search results */
+    
+    /* used in the mini chapters display when you search, when unexpanded is the thumbnail rounding */
+    ytd-expandable-metadata-renderer:not([is-expanded]) {
+        --yt-img-border-radius: 0;
+    }
 }
