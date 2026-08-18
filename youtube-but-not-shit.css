@@ -21,6 +21,10 @@
         border-radius: 0;
     }
 
+    /* disable that rounded light shape that rounds the top of button */
+    yt-light-shape {
+        display: none !important;
+    }
 
 
     /* disable rounded view on top searchbar */
@@ -122,7 +126,10 @@
     }
     /* and also moves title so its not colliding with the 3 dots button */
     .ytLockupMetadataViewModelTitle {
-        padding-right: 36px;
+        padding-right: 0 !important;
+    }
+    .ytLockupMetadataViewModelTextContainer {
+        margin-right: 40px;
     }
 
     /* yt left side panel when not expanded */
@@ -254,6 +261,9 @@
 
                 /* disable desc custom colour oh hover*/
                 --yt-saturated-raised-background: var(--endernon-yt-c2);
+                yt-interaction > .yt-interaction {
+                    border-radius: 0;
+                }
             }
 
             /* for some reason this is broken. Channel and SUBSCRIBe button*/
@@ -271,6 +281,16 @@
             /* the Ask button */
             yt-button-view-model.ytd-menu-renderer:has(button-view-model button[aria-label="Ask"]) {
                 display: none;
+            }
+            
+            /* Comments section */
+            #comments {
+                #contents {
+                    /* the line thingy for reddit ass comment replies, less rounding */
+                    .ytSubThreadThreadline > .ytSubThreadConnection {
+                        border-radius: 0;
+                    }
+                }
             }
         }
     }
